@@ -1,6 +1,8 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { TodoApp } from "./08-useReducer/TodoApp";
+// import { TodoApp } from "./08-useReducer/TodoApp";
+import { BrowserRouter } from "react-router-dom";
+import { MainApp } from "./09-useContext/MainApp";
 // import { Padre } from "./07-tarea-memo/Padre";
 // import { Memorize } from "./06-memos/Memorize";
 // import { MemoHook } from "./06-memos/MemoHook";
@@ -22,5 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   // <MultipleCustomHooks />
   // <Layout/>
   // <Padre />
-  <TodoApp/>
+  <BrowserRouter>
+    <MainApp/>
+  </BrowserRouter>
 );
