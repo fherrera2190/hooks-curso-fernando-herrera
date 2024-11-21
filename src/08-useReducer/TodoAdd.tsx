@@ -1,14 +1,23 @@
 import { useForm } from "../hooks/useForm";
-import PropTypes from "prop-types";
-export const TodoAdd = ({ onNewTodo }) => {
-  const { description, onInputChange, onResetForm } = useForm({
+import { Todo } from "./interfaces";
+
+interface TodoAddProps {
+  onNewTodo: (todo: Todo) => void;
+}
+
+export const TodoAdd = ({ onNewTodo }: TodoAddProps) => {
+  const {
+    formState: { description },
+    onInputChange,
+    onResetForm,
+  } = useForm({
     description: "",
   });
 
-  const onFormSubmit = (event) => {
+  const onFormSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (description.length < 1) return;
-    const newTodo = {
+    const newTodo: Todo = {
       id: new Date().getTime() * 3,
       description,
       done: false,
@@ -33,8 +42,4 @@ export const TodoAdd = ({ onNewTodo }) => {
       </button>
     </form>
   );
-};
-
-TodoAdd.propTypes = {
-  onNewTodo: PropTypes.func,
 };

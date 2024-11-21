@@ -1,6 +1,14 @@
-import PropTypes from "prop-types";
+interface TodoItemProps {
+  todo: any;
+  onDeleteTodo: (id: number) => void;
+  onToggleTodo: (id: number) => void;
+}
 
-export const TodoItem = ({ todo, onDeleteTodo, onToggleTodo }) => {
+export const TodoItem = ({
+  todo,
+  onDeleteTodo,
+  onToggleTodo,
+}: TodoItemProps) => {
   return (
     <li className="list-group-item d-flex justify-content-between">
       <span
@@ -16,10 +24,4 @@ export const TodoItem = ({ todo, onDeleteTodo, onToggleTodo }) => {
       </button>
     </li>
   );
-};
-
-TodoItem.propTypes = {
-  todo: PropTypes.object,
-  onDeleteTodo: PropTypes.func,
-  onToggleTodo: PropTypes.func,
 };

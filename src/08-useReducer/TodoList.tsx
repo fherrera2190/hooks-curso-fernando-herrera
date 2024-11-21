@@ -1,5 +1,4 @@
 import { TodoItem } from "./TodoItem";
-import PropTypes from "prop-types";
 
 interface TodoListProps {
   todos: any[];
@@ -24,10 +23,4 @@ export const TodoList = ({
       ))}
     </ul>
   );
-};
-
-TodoList.propTypes = {
-  todos: PropTypes.array,
-  onDeleteTodo: PropTypes.func,
-  onToggleTodo: PropTypes.func,
 };

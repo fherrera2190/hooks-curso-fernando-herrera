@@ -1,7 +1,10 @@
+import { Todo, TodoAction } from "./interfaces";
 
 
-
-export const todoReducer = (initialState = [], action) => {
+export const todoReducer = (
+  initialState: Todo[] = [],
+  action: TodoAction
+): Todo[] => {
   switch (action.type) {
     case "[TODO] Add Todo":
       return [...initialState, action.payload];

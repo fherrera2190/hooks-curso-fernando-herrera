@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { UserContext } from "./context/UserContext";
+import { UserContextType } from "./interfaces";
 
 export const HomePage = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext) as UserContextType;
 
   return (
     <>
